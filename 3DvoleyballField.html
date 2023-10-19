@@ -1,0 +1,530 @@
+<html>
+	<head>
+		<style>
+			body { margin: 0; }
+			canvas { width: 100%; height: 100% }
+		</style>
+	</head>
+	<body>
+		<script src="three.min.js"></script>
+		<script>
+			// Задача: Направете дупка в плочката
+
+			var renderer = new THREE.WebGLRenderer();
+			renderer.setSize( window.innerWidth, window.innerHeight );
+			document.body.appendChild( renderer.domElement );
+
+			var scene = new THREE.Scene();
+			
+			var aspect = window.innerWidth/window.innerHeight;
+			var camera = new THREE.PerspectiveCamera( 30, aspect );
+			camera.position.set( 6, 3, 8 );
+			camera.lookAt( new THREE.Vector3() );
+
+            //-----------------------------------------------------------------------------------------------
+
+			var geometry = new THREE.BoxGeometry( 4, 0.25, 6 );
+			var material = new THREE.MeshPhongMaterial( {color: '#DDB49B'} );
+
+
+
+			var plate;
+			plate = new THREE.Mesh( geometry, material ); //dolnata plocha
+			plate.position.x = 1;
+			scene.add( plate );
+            //-----------------------------------------------------------------------------------------------
+
+            geometry = new THREE.BoxGeometry( 3, 0.1, 5.7 );
+            material = new THREE.MeshPhongMaterial( {color: '#7FCCBA'} );
+
+			plate = new THREE.Mesh( geometry, material ); //gornata dolepena ploca s igrishteto
+			plate.position.x = 1.5;
+            plate.position.y = 0.17;
+            plate.position.z = 0.15;
+			scene.add( plate );
+            //-----------------------------------------------------------------------------------------------
+
+            geometry = new THREE.BoxGeometry( 0.8, 0.1, 6 );
+            material = new THREE.MeshPhongMaterial( {color: '#EAE87C'} );
+
+			plate = new THREE.Mesh( geometry, material ); //gornata dolepena ploca s hrastite
+			plate.position.x = -0.6;
+            plate.position.y = 0.17;
+			scene.add( plate );
+            //-----------------------------------------------------------------------------------------------
+
+            geometry = new THREE.BoxGeometry( 0.2, 0.3, 6 );
+            material = new THREE.MeshPhongMaterial( {color: '#E6DEC9'} );
+
+			plate = new THREE.Mesh( geometry, material ); //stenata do hrastite
+			plate.position.x = -0.1;
+            plate.position.y = 0.27;
+			scene.add( plate );
+
+            //-----------------------------------------------------------------------------------------------
+
+            geometry = new THREE.BoxGeometry( 3, 0.3, 0.2 );
+            material = new THREE.MeshPhongMaterial( {color: '#E6DEC9'} );
+
+			plate = new THREE.Mesh( geometry, material ); //stenata ne do hrastite
+			plate.position.x = 1.48;
+            plate.position.y = 0.27;
+            plate.position.z = -2.9;
+			scene.add( plate );
+            //-----------------------------------------------------------------------------------------------
+            geometry = new THREE.BoxGeometry( 0.3, 0.7, 1.1 );
+            material = new THREE.MeshPhongMaterial( {color: '#EAE87C'} );
+
+			plate = new THREE.Mesh( geometry, material ); //hrast 1
+			plate.position.x = -0.5;
+            plate.position.y = 0.57;
+            plate.position.z = 2.3;
+			scene.add( plate );
+
+            //-----------------------------------------------------------------------------------------------
+
+            geometry = new THREE.BoxGeometry( 0.3, 0.7, 1.1 );
+            material = new THREE.MeshPhongMaterial( {color: '#EAE87C'} );
+
+			plate = new THREE.Mesh( geometry, material ); //hrast 2
+			plate.position.x = -0.5;
+            plate.position.y = 0.57;
+            plate.position.z = 0.9;
+			scene.add( plate );
+
+
+            //-----------------------------------------------------------------------------------------------
+
+            geometry = new THREE.BoxGeometry( 0.3, 0.7, 1.1 );
+            material = new THREE.MeshPhongMaterial( {color: '#EAE87C'} );
+
+			plate = new THREE.Mesh( geometry, material ); //hrast 3
+			plate.position.x = -0.5;
+            plate.position.y = 0.57;
+            plate.position.z = -0.5;
+			scene.add( plate );
+
+
+            //-----------------------------------------------------------------------------------------------
+
+
+            geometry = new THREE.BoxGeometry( 0.3, 0.7, 1.1 );
+            material = new THREE.MeshPhongMaterial( {color: '#EAE87C'} );
+
+			plate = new THREE.Mesh( geometry, material ); //hrast 4
+			plate.position.x = -0.5;
+            plate.position.y = 0.57;
+            plate.position.z = -1.8;
+			scene.add( plate );
+
+
+            //-----------------------------------------------------------------------------------------------
+
+            geometry = new THREE.BoxGeometry( 1.4, 0.1, 4 );
+            material = new THREE.MeshPhongMaterial( {color: '#F8AA5D'} );
+
+			plate = new THREE.Mesh( geometry, material ); //igrishteto
+			plate.position.x = 1.5;
+            plate.position.y = 0.175;
+            plate.position.z = 0.15;
+			scene.add( plate );
+
+
+            //-----------------------------------------------------------------------------------------------
+
+            geometry = new THREE.BoxGeometry( 0.05, 0.1, 4 );
+            material = new THREE.MeshPhongMaterial( {color: '#E6DDC9'} );
+
+			plate = new THREE.Mesh( geometry, material ); //lenta stranichna dulga
+			plate.position.x = 0.8;
+            plate.position.y = 0.18;
+            plate.position.z = 0.15;
+			scene.add( plate );
+
+
+            //-----------------------------------------------------------------------------------------------
+
+            geometry = new THREE.BoxGeometry( 0.05, 0.1, 4 );
+            material = new THREE.MeshPhongMaterial( {color: '#E6DDC9'} );
+
+			plate = new THREE.Mesh( geometry, material ); //lenta stranichna dulga
+			plate.position.x = 2.2;
+            plate.position.y = 0.18;
+            plate.position.z = 0.15;
+			scene.add( plate );
+
+
+            //-----------------------------------------------------------------------------------------------
+
+            geometry = new THREE.BoxGeometry( 1.4, 0.1, 0.05 );
+            material = new THREE.MeshPhongMaterial( {color: '#E6DDC9'} );
+
+			plate = new THREE.Mesh( geometry, material ); //lenta pod mrejata
+			plate.position.x = 1.5;
+            plate.position.y = 0.18;
+            plate.position.z = 0.15;
+			scene.add( plate );
+
+
+            //-----------------------------------------------------------------------------------------------
+
+
+            geometry = new THREE.BoxGeometry( 1.4, 0.1, 0.05 );
+            material = new THREE.MeshPhongMaterial( {color: '#E6DDC9'} );
+
+			plate = new THREE.Mesh( geometry, material ); //lenta pred mrejata
+			plate.position.x = 1.5;
+            plate.position.y = 0.18;
+            plate.position.z = 0.8;
+			scene.add( plate );
+
+
+            //-----------------------------------------------------------------------------------------------
+
+            geometry = new THREE.BoxGeometry( 1.4, 0.1, 0.05 );
+            material = new THREE.MeshPhongMaterial( {color: '#E6DDC9'} );
+
+			plate = new THREE.Mesh( geometry, material ); //lenta zad mrejata
+			plate.position.x = 1.5;
+            plate.position.y = 0.18;
+            plate.position.z = -0.5;
+			scene.add( plate );
+
+
+            //-----------------------------------------------------------------------------------------------
+
+            geometry = new THREE.BoxGeometry( 1.4, 0.1, 0.05 );
+            material = new THREE.MeshPhongMaterial( {color: '#E6DDC9'} );
+
+			plate = new THREE.Mesh( geometry, material ); //lenta malka otstrani
+			plate.position.x = 1.5;
+            plate.position.y = 0.18;
+            plate.position.z = -1.8;
+			scene.add( plate );
+
+
+            //-----------------------------------------------------------------------------------------------
+
+            geometry = new THREE.BoxGeometry( 1.4, 0.1, 0.05 );
+            material = new THREE.MeshPhongMaterial( {color: '#E6DDC9'} );
+
+			plate = new THREE.Mesh( geometry, material ); //lenta malka otstrani
+			plate.position.x = 1.5;
+            plate.position.y = 0.18;
+            plate.position.z = 2.15;
+			scene.add( plate );
+
+
+            //-----------------------------------------------------------------------------------------------
+
+
+            geometry = new THREE.BoxGeometry( 0.035, 1.2, 0.035 );
+            material = new THREE.MeshPhongMaterial( {color: '#E6DDC9'} );
+
+			plate = new THREE.Mesh( geometry, material ); //stulb na mrejata
+			plate.position.x = 0.8;
+            plate.position.y = 0.18;
+            plate.position.z = 0.15;
+			scene.add( plate );
+
+            //-----------------------------------------------------------------------------------------------
+
+            geometry = new THREE.BoxGeometry( 0.035, 1.2, 0.035 );
+            material = new THREE.MeshPhongMaterial( {color: '#E6DDC9'} );
+
+			plate = new THREE.Mesh( geometry, material ); //stulb na mrejata
+			plate.position.x = 2.2;
+            plate.position.y = 0.18;
+            plate.position.z = 0.15;
+			scene.add( plate );
+
+            //-----------------------------------------------------------------------------------------------
+            
+
+            for(let i = 0.8; i <= 2.2; i = i + 0.03)
+            {
+                geometry = new THREE.BoxGeometry( 0.01, 0.35, 0.01 );
+                material = new THREE.MeshPhongMaterial( {color: '#9A6C5A'} );
+
+                plate = new THREE.Mesh( geometry, material ); //verticalni lenti na mrejata
+                plate.position.x = i;
+                plate.position.y = 0.559;
+                plate.position.z = 0.15;
+                scene.add( plate );
+
+            }
+            //-----------------------------------------------------------------------------------------------
+
+            for(let i = 0.41; i <= 0.75; i = i + 0.03)
+            {
+                geometry = new THREE.BoxGeometry( 1.4, 0.01, 0.01 );
+                material = new THREE.MeshPhongMaterial( {color: '#9A6C5A'} );
+
+                plate = new THREE.Mesh( geometry, material ); //horizontalni lenti na mrejata
+                plate.position.x = 1.5;
+                plate.position.y = i;
+                plate.position.z = 0.15;
+                scene.add( plate );
+
+            }
+
+            //-----------------------------------------------------------------------------------------------
+
+            geometry = new THREE.BoxGeometry( 1.4, 0.02, 0.02 );
+            material = new THREE.MeshPhongMaterial( {color: '#E6DDC9'} );
+
+            plate = new THREE.Mesh( geometry, material ); //horizontalna gorna lenta na mrejata
+            plate.position.x = 1.5;
+            plate.position.y = 0.77;
+            plate.position.z = 0.15;
+            scene.add( plate );
+
+            //-----------------------------------------------------------------------------------------------
+
+
+            geometry = new THREE.BoxGeometry( 1.4, 0.02, 0.02 );
+            material = new THREE.MeshPhongMaterial( {color: '#E6DDC9'} );
+
+            plate = new THREE.Mesh( geometry, material ); //horizontalna dolna lenta na mrejata
+            plate.position.x = 1.5;
+            plate.position.y = 0.38;
+            plate.position.z = 0.15;
+            scene.add( plate );
+
+            //---------------------------------------------------------------------------------------------
+
+
+            geometry = new THREE.BoxGeometry( 0.02, 0.4, 0.02 );
+            material = new THREE.MeshPhongMaterial( {color: '#E6DDC9'} );
+
+			plate = new THREE.Mesh( geometry, material ); //stulb na mrejata
+			plate.position.x = 1.5;
+            plate.position.y = 0.57;
+            plate.position.z = 0.15;
+			scene.add( plate );
+
+            //---------------------------------------------------------------------------------------------
+
+            const group = new THREE.Group();
+
+
+            geometry = new THREE.BoxGeometry( 0.02, 0.12, 0.02 );
+            material = new THREE.MeshPhongMaterial( {color: '#E19373'} );
+
+			plate = new THREE.Mesh( geometry, material ); //krak na peyka
+			plate.position.x = 3.15;
+            plate.position.y = 0.57;
+            plate.position.z = 3;
+            group.add( plate );
+
+            geometry = new THREE.BoxGeometry( 0.02, 0.12, 0.02 );
+            material = new THREE.MeshPhongMaterial( {color: '#E19373'} );
+
+			plate = new THREE.Mesh( geometry, material ); //krak na peyka
+			plate.position.x = 3.03;
+            plate.position.y = 0.57;
+            plate.position.z = 3;
+            group.add( plate );
+
+            geometry = new THREE.BoxGeometry( 0.02, 0.12, 0.02 );
+            material = new THREE.MeshPhongMaterial( {color: '#E19373'} );
+
+			plate = new THREE.Mesh( geometry, material ); //krak na peyka
+			plate.position.x = 3.15;
+            plate.position.y = 0.57;
+            plate.position.z = 2.5;
+            group.add( plate );
+
+            geometry = new THREE.BoxGeometry( 0.02, 0.12, 0.02 );
+            material = new THREE.MeshPhongMaterial( {color: '#E19373'} );
+
+			plate = new THREE.Mesh( geometry, material ); //krak na peyka
+			plate.position.x = 3.03;
+            plate.position.y = 0.57;
+            plate.position.z = 2.5;
+            group.add( plate );
+
+            geometry = new THREE.BoxGeometry( 0.12, 0.02, 0.02 );
+            material = new THREE.MeshPhongMaterial( {color: '#E19373'} );
+
+			plate = new THREE.Mesh( geometry, material ); //otstrani na sedalkata
+			plate.position.x = 3.1;
+            plate.position.y = 0.62;
+            plate.position.z = 2.5;
+            group.add( plate );
+
+            geometry = new THREE.BoxGeometry( 0.12, 0.02, 0.02 );
+            material = new THREE.MeshPhongMaterial( {color: '#E19373'} );
+
+			plate = new THREE.Mesh( geometry, material ); //otstrani na sedalkata
+			plate.position.x = 3.1;
+            plate.position.y = 0.62;
+            plate.position.z = 3;
+            group.add( plate );
+
+
+            geometry = new THREE.BoxGeometry( 0.02, 0.02, 0.5 );
+            material = new THREE.MeshPhongMaterial( {color: '#E19373'} );
+
+			plate = new THREE.Mesh( geometry, material ); //dulgi na sedalkata
+			plate.position.x = 3.1;
+            plate.position.y = 0.62;
+            plate.position.z = 2.75;
+            group.add( plate );
+
+            geometry = new THREE.BoxGeometry( 0.02, 0.02, 0.5 );
+            material = new THREE.MeshPhongMaterial( {color: '#E19373'} );
+
+			plate = new THREE.Mesh( geometry, material ); //dulgi na sedalkata
+			plate.position.x = 3.04;
+            plate.position.y = 0.62;
+            plate.position.z = 2.75;
+            group.add( plate );
+
+            geometry = new THREE.BoxGeometry( 0.02, 0.02, 0.5 );
+            material = new THREE.MeshPhongMaterial( {color: '#E19373'} );
+
+			plate = new THREE.Mesh( geometry, material ); //dulgi na sedalkata
+			plate.position.x = 3.15;
+            plate.position.y = 0.62;
+            plate.position.z = 2.75;
+            group.add( plate );
+
+            //---------------------------------------------------------------------------------------------
+            group.position.x = -0.05;
+            group.position.y = -0.05;
+            group.position.z = -0.1;
+            scene.add(group);
+
+            let group1 = group.clone(true);
+            group1.position.x = -0.05;
+            group1.position.y = -0.05;
+            group1.position.z = -1;
+            scene.add(group1);
+
+            let group2 = group.clone(true);
+            group1.position.x = -0.05;
+            group1.position.y = -0.05;
+            group2.position.z = -2;
+            scene.add(group2);
+
+            let group3 = group.clone(true);
+            group1.position.x = -0.05;
+            group1.position.y = -0.05;
+            group3.position.z = -3;
+            scene.add(group3);
+
+            //------------------------------------------------------------------------------------------
+            let group7 = group.clone(true);
+            group7.position.x = -2.2;
+            group7.position.y = -0.05;
+            group7.position.z = -0.1;
+            scene.add(group7);
+
+            let group4 = group.clone(true);
+            group4.position.x = -2.2;
+            group4.position.y = -0.05;
+            group4.position.z = -1;
+            scene.add(group4);
+
+            let group5 = group.clone(true);
+            group5.position.x = -2.2;
+            group5.position.y = -0.05;
+            group5.position.z = -2;
+            scene.add(group5);
+
+            let group6 = group.clone(true);
+            group6.position.x = -2.2;
+            group6.position.y = -0.05;
+            group6.position.z = -3;
+            scene.add(group6);
+
+            //------------------------------------------------------------------------------------------
+
+            geometry = new THREE.BoxGeometry( 0.035, 1.2, 0.035 );
+            material = new THREE.MeshPhongMaterial( {color: '#876C5C'} );
+
+			plate = new THREE.Mesh( geometry, material ); //stulb na ogradata
+			plate.position.x = 2.95;
+            plate.position.y = 0.5;
+            plate.position.z = -2.9;
+			scene.add( plate );
+
+
+            geometry = new THREE.BoxGeometry( 0.035, 1.2, 0.035 );
+            material = new THREE.MeshPhongMaterial( {color: '#876C5C'} );
+
+			plate = new THREE.Mesh( geometry, material ); //stulb na ogradata
+			plate.position.x = -0.01;
+            plate.position.y = 0.5;
+            plate.position.z = -2.9;
+			scene.add( plate );
+
+
+            geometry = new THREE.BoxGeometry( 0.035, 1.2, 0.035 );
+            material = new THREE.MeshPhongMaterial( {color: '#876C5C'} );
+
+			plate = new THREE.Mesh( geometry, material ); //stulb na ogradata
+			plate.position.x = 1.5;
+            plate.position.y = 0.5;
+            plate.position.z = -2.9;
+			scene.add( plate );
+
+            geometry = new THREE.BoxGeometry( 0.035, 1.2, 0.035 );
+            material = new THREE.MeshPhongMaterial( {color: '#876C5C'} );
+
+			plate = new THREE.Mesh( geometry, material ); //stulb na ogradata
+			plate.position.x = 0.7;
+            plate.position.y = 0.5;
+            plate.position.z = -2.9;
+			scene.add( plate );
+
+            geometry = new THREE.BoxGeometry( 0.035, 1.2, 0.035 );
+            material = new THREE.MeshPhongMaterial( {color: '#876C5C'} );
+
+			plate = new THREE.Mesh( geometry, material ); //stulb na ogradata
+			plate.position.x = 2.3;
+            plate.position.y = 0.5;
+            plate.position.z = -2.9;
+			scene.add( plate );
+
+            //------------------------------------------------------------------------------------------
+
+            for(let i = 0; i <= 2.95; i = i + 0.06)
+            {
+                geometry = new THREE.BoxGeometry( 0.01, 0.57, 0.01 );
+                material = new THREE.MeshPhongMaterial( {color: '#9A6C5A'} );
+
+                plate = new THREE.Mesh( geometry, material ); //verticalni lenti na mrejata
+                plate.position.x = i;
+                plate.position.y = 0.8;
+                plate.position.z = -2.9;
+                scene.add( plate );
+
+            }
+
+            for(let i = 0.53; i <= 1.09; i = i + 0.06)
+            {
+                geometry = new THREE.BoxGeometry( 2.97, 0.01, 0.01 );
+                material = new THREE.MeshPhongMaterial( {color: '#9A6C5A'} );
+
+                plate = new THREE.Mesh( geometry, material ); //horizontalni lenti na mrejata
+                plate.position.x = 1.47;
+                plate.position.y = i;
+                plate.position.z = -2.9;
+                scene.add( plate );
+
+            }
+
+            //------------------------------------------------------------------------------------------
+
+
+			var light = new THREE.PointLight( );
+			light.position.set( 5, 10, 10 );
+			scene.add( light );
+
+
+			renderer.render(scene, camera);
+		</script>
+	</body>
+</html>
