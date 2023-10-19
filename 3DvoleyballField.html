@@ -18,7 +18,7 @@
 			
 			var aspect = window.innerWidth/window.innerHeight;
 			var camera = new THREE.PerspectiveCamera( 30, aspect );
-			camera.position.set( 6, 3, 8 );
+			camera.position.set( 7, 3, 8 ); //6, 3, 8
 			camera.lookAt( new THREE.Vector3() );
 
             //-----------------------------------------------------------------------------------------------
@@ -517,6 +517,7 @@
             }
 
             //------------------------------------------------------------------------------------------
+            
 
 
 			var light = new THREE.PointLight( );
@@ -525,6 +526,7 @@
 
 
 			renderer.render(scene, camera);
+            
 		</script>
 	</body>
 </html>
