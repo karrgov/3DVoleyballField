@@ -8,17 +8,16 @@
 	<body>
 		<script src="three.min.js"></script>
 		<script>
-			// Задача: Направете дупка в плочката
-
 			var renderer = new THREE.WebGLRenderer();
 			renderer.setSize( window.innerWidth, window.innerHeight );
 			document.body.appendChild( renderer.domElement );
 
 			var scene = new THREE.Scene();
+            scene.background = new THREE.Color('#eee')
 			
 			var aspect = window.innerWidth/window.innerHeight;
 			var camera = new THREE.PerspectiveCamera( 30, aspect );
-			camera.position.set( 7, 3, 8 ); //6, 3, 8
+			camera.position.set( 10, 5, 8 ); //7, 3, 8
 			camera.lookAt( new THREE.Vector3() );
 
             //-----------------------------------------------------------------------------------------------
@@ -218,23 +217,23 @@
             //-----------------------------------------------------------------------------------------------
 
 
-            geometry = new THREE.BoxGeometry( 0.035, 1.2, 0.035 );
+            geometry = new THREE.BoxGeometry( 0.035, 0.7, 0.035 );
             material = new THREE.MeshPhongMaterial( {color: '#E6DDC9'} );
 
 			plate = new THREE.Mesh( geometry, material ); //stulb na mrejata
 			plate.position.x = 0.8;
-            plate.position.y = 0.18;
+            plate.position.y = 0.43;
             plate.position.z = 0.15;
 			scene.add( plate );
 
             //-----------------------------------------------------------------------------------------------
 
-            geometry = new THREE.BoxGeometry( 0.035, 1.2, 0.035 );
+            geometry = new THREE.BoxGeometry( 0.035, 0.7, 0.035 );
             material = new THREE.MeshPhongMaterial( {color: '#E6DDC9'} );
 
 			plate = new THREE.Mesh( geometry, material ); //stulb na mrejata
 			plate.position.x = 2.2;
-            plate.position.y = 0.18;
+            plate.position.y = 0.43;
             plate.position.z = 0.15;
 			scene.add( plate );
 
@@ -391,52 +390,52 @@
             group.add( plate );
 
             //---------------------------------------------------------------------------------------------
-            group.position.x = -0.05;
-            group.position.y = -0.05;
-            group.position.z = -0.1;
+            group.position.x = -0.4;
+            group.position.y = -0.29;
+            group.position.z = -0.9;
             scene.add(group);
 
             let group1 = group.clone(true);
-            group1.position.x = -0.05;
-            group1.position.y = -0.05;
-            group1.position.z = -1;
+            group1.position.x = -0.4;
+            group1.position.y = -0.29;
+            group1.position.z = -1.9;
             scene.add(group1);
 
             let group2 = group.clone(true);
-            group1.position.x = -0.05;
-            group1.position.y = -0.05;
-            group2.position.z = -2;
+            group1.position.x = -0.4;
+            group1.position.y = -0.29;
+            group2.position.z = -2.9;
             scene.add(group2);
 
             let group3 = group.clone(true);
-            group1.position.x = -0.05;
-            group1.position.y = -0.05;
-            group3.position.z = -3;
+            group1.position.x = -0.4;
+            group1.position.y = -0.29;
+            group3.position.z = -3.9;
             scene.add(group3);
 
             //------------------------------------------------------------------------------------------
             let group7 = group.clone(true);
-            group7.position.x = -2.2;
-            group7.position.y = -0.05;
-            group7.position.z = -0.1;
+            group7.position.x = -2.6;
+            group7.position.y = -0.29;
+            group7.position.z = -0.9;
             scene.add(group7);
 
             let group4 = group.clone(true);
-            group4.position.x = -2.2;
-            group4.position.y = -0.05;
-            group4.position.z = -1;
+            group4.position.x = -2.6;
+            group4.position.y = -0.29;
+            group4.position.z = -1.9;
             scene.add(group4);
 
             let group5 = group.clone(true);
-            group5.position.x = -2.2;
-            group5.position.y = -0.05;
-            group5.position.z = -2;
+            group5.position.x = -2.6;
+            group5.position.y = -0.29;
+            group5.position.z = -2.9;
             scene.add(group5);
 
             let group6 = group.clone(true);
-            group6.position.x = -2.2;
-            group6.position.y = -0.05;
-            group6.position.z = -3;
+            group6.position.x = -2.6;
+            group6.position.y = -0.29;
+            group6.position.z = -3.9;
             scene.add(group6);
 
             //------------------------------------------------------------------------------------------
@@ -517,11 +516,85 @@
             }
 
             //------------------------------------------------------------------------------------------
+
+            geometry = new THREE.BoxGeometry( 0.035, 1.15, 0.035 );
+            material = new THREE.MeshPhongMaterial( {color: '#E6DDC9'} );
+
+			plate = new THREE.Mesh( geometry, material ); //stulb zname
+			plate.position.x = 0.8;
+            plate.position.y = 0.8;
+            plate.position.z = 2.5;
+			scene.add( plate );
+
+            geometry = new THREE.BoxGeometry( 0.07, 0.25, 0.45 );
+            material = new THREE.MeshPhongMaterial( {color: '#E00226'} );
+
+			plate = new THREE.Mesh( geometry, material ); //chast ot znameto
+			plate.position.x = 0.8;
+            plate.position.y = 1.23;
+            plate.position.z = 2.75;
+			scene.add( plate );
+
+            geometry = new THREE.BoxGeometry( 0.0725, 0.07, 0.45 );
+            material = new THREE.MeshPhongMaterial( {color: '#FDFDFD'} );
+
+			plate = new THREE.Mesh( geometry, material ); //chast ot znameto
+			plate.position.x = 0.8;
+            plate.position.y = 1.23;
+            plate.position.z = 2.75;
+			scene.add( plate );
+
+            geometry = new THREE.BoxGeometry( 0.0725, 0.25, 0.07 );
+            material = new THREE.MeshPhongMaterial( {color: '#FDFDFD'} );
+
+			plate = new THREE.Mesh( geometry, material ); //chast ot znameto
+			plate.position.x = 0.8;
+            plate.position.y = 1.23;
+            plate.position.z = 2.82;
+			scene.add( plate );
+
+            //------------------------------------------------------------------------------------------
+
+            geometry = new THREE.BoxGeometry( 0.035, 1.15, 0.035 );
+            material = new THREE.MeshPhongMaterial( {color: '#E6DDC9'} );
+
+			plate = new THREE.Mesh( geometry, material ); //stulb zname
+			plate.position.x = 2.25;
+            plate.position.y = 0.8;
+            plate.position.z = -2.15;
+			scene.add( plate );
+
+            geometry = new THREE.BoxGeometry( 0.07, 0.25, 0.15 );
+            material = new THREE.MeshPhongMaterial( {color: '#CE1026'} );
+
+			plate = new THREE.Mesh( geometry, material ); //chast ot znameto
+			plate.position.x = 2.25;
+            plate.position.y = 1.23;
+            plate.position.z = -2.04;
+			scene.add( plate );
+
+            geometry = new THREE.BoxGeometry( 0.07, 0.25, 0.15 );
+            material = new THREE.MeshPhongMaterial( {color: '#FCD116'} );
+
+			plate = new THREE.Mesh( geometry, material ); //chast ot znameto
+			plate.position.x = 2.25;
+            plate.position.y = 1.23;
+            plate.position.z = -1.9;
+			scene.add( plate );
+
+            geometry = new THREE.BoxGeometry( 0.07, 0.25, 0.15 );
+            material = new THREE.MeshPhongMaterial( {color: '#002B7F'} );
+
+			plate = new THREE.Mesh( geometry, material ); //chast ot znameto
+			plate.position.x = 2.25;
+            plate.position.y = 1.23;
+            plate.position.z = -1.76;
+			scene.add( plate );
             
 
 
 			var light = new THREE.PointLight( );
-			light.position.set( 5, 10, 10 );
+			light.position.set( 13, 20, 25 );
 			scene.add( light );
 
 
